@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modern Calculator</title>
+    <meta name="description" content="Modern UI Calculator - HTML/CSS/JS" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <h1 class="app__title">Calculator</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Theme toggle" title="Theme">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        </button>
+      </header>
+
+      <main class="calc" role="application" aria-label="Calculator">
+        <div class="display" aria-live="polite">
+          <div class="display__expr" id="displayExpr" title="Expression"></div>
+          <div class="display__result" id="displayResult" title="Result">0</div>
+        </div>
+
+        <div class="keys" id="keys">
+          <!-- Row 1 -->
+          <button class="key key--func" data-action="clear" aria-label="Clear">AC</button>
+          <button class="key key--func" data-action="delete" aria-label="Delete">DEL</button>
+          <button class="key key--op" data-value="%" aria-label="Percent">%</button>
+          <button class="key key--op" data-value="/" aria-label="Divide">÷</button>
+
+          <!-- Row 2 -->
+          <button class="key" data-value="7">7</button>
+          <button class="key" data-value="8">8</button>
+          <button class="key" data-value="9">9</button>
+          <button class="key key--op" data-value="*" aria-label="Multiply">×</button>
+
+          <!-- Row 3 -->
+          <button class="key" data-value="4">4</button>
+          <button class="key" data-value="5">5</button>
+          <button class="key" data-value="6">6</button>
+          <button class="key key--op" data-value="-" aria-label="Minus">−</button>
+
+          <!-- Row 4 -->
+          <button class="key" data-value="1">1</button>
+          <button class="key" data-value="2">2</button>
+          <button class="key" data-value="3">3</button>
+          <button class="key key--op" data-value="+" aria-label="Plus">+</button>
+
+          <!-- Row 5 -->
+          <button class="key key--wide" data-value="0" aria-label="Zero">0</button>
+          <button class="key" data-value=".">.</button>
+          <button class="key key--eq" data-action="equals" aria-label="Equals">=</button>
+        </div>
+
+        
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
