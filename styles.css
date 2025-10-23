@@ -50,10 +50,8 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(1200px 800px at 20% 10%, rgba(27,30,54,0.85), transparent 60%),
-              radial-gradient(1000px 700px at 80% 20%, rgba(27,47,74,0.85), transparent 60%),
-              radial-gradient(1200px 900px at 50% 90%, rgba(22,34,58,0.85), transparent 60%),
-              var(--bg);
+  /* Cleaner base so side glows stand out */
+  background: linear-gradient(160deg, #0d1122 0%, #0b0f1e 50%, #0a0e1b 100%);
   color: var(--text);
   display: grid;
   place-items: center;
@@ -76,12 +74,12 @@ body::after {
   z-index: 0;
 }
 body::before {
-  left: -38vmax;
-  background: radial-gradient(closest-side, rgba(93,118,255,0.36), rgba(93,118,255,0.14) 40%, transparent 72%);
+  left: -45vmax;
+  background: radial-gradient(55% 55% at 60% 50%, rgba(86,112,255,0.42) 0%, rgba(86,112,255,0.2) 35%, transparent 75%);
 }
 body::after {
-  right: -38vmax;
-  background: radial-gradient(closest-side, rgba(173,126,255,0.33), rgba(173,126,255,0.12) 40%, transparent 72%);
+  right: -45vmax;
+  background: radial-gradient(55% 55% at 40% 50%, rgba(155,97,255,0.40) 0%, rgba(155,97,255,0.18) 35%, transparent 75%);
 }
 
 /* Softer, brighter background treatment for light mode */
