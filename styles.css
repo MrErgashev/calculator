@@ -57,6 +57,31 @@ body {
   color: var(--text);
   display: grid;
   place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Big, soft glows on left/right */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 95vmax;
+  height: 95vmax;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: 0.6;
+  z-index: 0;
+}
+body::before {
+  left: -38vmax;
+  background: radial-gradient(closest-side, rgba(93,118,255,0.36), rgba(93,118,255,0.14) 40%, transparent 72%);
+}
+body::after {
+  right: -38vmax;
+  background: radial-gradient(closest-side, rgba(173,126,255,0.33), rgba(173,126,255,0.12) 40%, transparent 72%);
 }
 
 /* Softer, brighter background treatment for light mode */
@@ -66,12 +91,24 @@ body {
               linear-gradient(160deg, #f9fbff 0%, #f2f4fb 48%, #fef9ff 100%);
 }
 
+/* Softer blobs in light theme */
+[data-theme="light"] body::before {
+  background: radial-gradient(closest-side, rgba(67,100,247,0.26), rgba(67,100,247,0.10) 42%, transparent 75%);
+  filter: blur(100px);
+  opacity: 0.65;
+}
+[data-theme="light"] body::after {
+  background: radial-gradient(closest-side, rgba(255,172,69,0.22), rgba(255,172,69,0.08) 42%, transparent 75%);
+  filter: blur(100px);
+  opacity: 0.6;
+}
+
 /* Standalone (installed) tweaks: respect safe areas */
 @media (display-mode: standalone) {
   body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
 }
 
-.app { width: min(92vw, 440px); }
+.app { width: min(92vw, 440px); position: relative; z-index: 1; }
 
 .app__header {
   display: grid;
