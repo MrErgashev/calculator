@@ -4,6 +4,9 @@
   --text: #f5f7ff;
   --muted: #b7bdd6;
   --bg-elev: rgba(255, 255, 255, 0.08);
+  /* Side labels */
+  --side-left-label: "Ergashev Muhammadsodiq";
+  --side-right-label: "+998 77 265 77 11";
 
   /* Device (calculator body) */
   --slab: #1f2430;
@@ -107,6 +110,36 @@ body::after {
 }
 
 .app { width: min(92vw, 440px); position: relative; z-index: 1; }
+
+/* Vertical side labels (left/right) */
+.app::before,
+.app::after {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(245,247,255,0.28);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 16px;
+  filter: blur(0.3px);
+  pointer-events: none;
+  z-index: 0;
+}
+.app::before {
+  content: var(--side-left-label);
+  left: 12px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+.app::after {
+  content: var(--side-right-label);
+  right: 12px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+[data-theme="light"] .app::before,
+[data-theme="light"] .app::after {
+  color: rgba(83,96,128,0.35);
+}
 
 .app__header {
   display: grid;
