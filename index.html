@@ -10,16 +10,10 @@
   <body>
     <div class="app">
       <header class="app__header">
-        <div class="app__meta">
-          <span class="app__meta-name" aria-label="Author">Ergashev Muhammadsodiq</span>
-          <a class="app__meta-phone" href="tel:+998772657711" aria-label="Phone">+998 77 265 77 11</a>
-        </div>
-        <div class="app__top">
-          <h1 class="app__title">Calculator</h1>
-          <button class="theme-toggle" id="themeToggle" aria-label="Theme toggle" title="Theme">
-            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
-          </button>
-        </div>
+        <h1 class="app__title">Calculator</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Theme toggle" title="Theme">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        </button>
       </header>
 
       <main class="calc" role="application" aria-label="Calculator">
@@ -33,19 +27,19 @@
           <button class="key key--func" data-action="clear" aria-label="Clear">AC</button>
           <button class="key key--func" data-action="delete" aria-label="Delete">DEL</button>
           <button class="key key--op" data-value="%" aria-label="Percent">%</button>
-          <button class="key key--op" data-value="/" aria-label="Divide">÷</button>
+          <button class="key key--op" data-value="/" aria-label="Divide">&divide;</button>
 
           <!-- Row 2 -->
           <button class="key" data-value="7">7</button>
           <button class="key" data-value="8">8</button>
           <button class="key" data-value="9">9</button>
-          <button class="key key--op" data-value="*" aria-label="Multiply">×</button>
+          <button class="key key--op" data-value="*" aria-label="Multiply">&times;</button>
 
           <!-- Row 3 -->
           <button class="key" data-value="4">4</button>
           <button class="key" data-value="5">5</button>
           <button class="key" data-value="6">6</button>
-          <button class="key key--op" data-value="-" aria-label="Minus">−</button>
+          <button class="key key--op" data-value="-" aria-label="Minus">&minus;</button>
 
           <!-- Row 4 -->
           <button class="key" data-value="1">1</button>
@@ -58,11 +52,10 @@
           <button class="key" data-value=".">.</button>
           <button class="key key--eq" data-action="equals" aria-label="Equals">=</button>
         </div>
-
-        
       </main>
     </div>
 
     <script src="script.js"></script>
   </body>
   </html>
+
